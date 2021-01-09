@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  db:
+    image: mongo:4.2
+  backend:
+    build: ./backend
+    environment:
+      - PORT=8000
+    volumes:
+      - backend_data:/app-data
+
+volumes:
+  backend_data:
